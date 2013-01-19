@@ -1,5 +1,5 @@
 require "define_rest/version"
+require "define_rest/service"
 
 module DefineRest
-  # Your code goes here...
 end
