@@ -1,3 +1,4 @@
+require_relative '../activerecord_helper'
 require_relative '../../../define_rest/lib/define_rest/service'
 
 describe DefineRest::Service do

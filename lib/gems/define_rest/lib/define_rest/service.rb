@@ -1,5 +1,5 @@
 module DefineRest
-  class Service
-    attr_reader :name, :description, :url, :http_method
+  class Service < ActiveRecord::Base
+    self.table_name = 'define_rest_service'
   end
 end
