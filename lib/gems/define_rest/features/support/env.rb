@@ -60,4 +60,6 @@
 
 lib = File.expand_path('../../../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require_relative '../../spec/activerecord_helper'
 require 'define_rest'
+require_relative '../../spec/factories_helper'

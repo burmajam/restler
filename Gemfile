@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 
-platform :mri do # MRI
+platform :mri do
   gem 'sqlite3'
 end
 platform :jruby do
@@ -11,6 +11,10 @@ platform :jruby do
 end
 
 gem 'define_rest', path: 'lib/gems/define_rest'
+group :test do # needed for define_rest
+  gem 'factory_girl', '~>4.0.0'
+  gem 'database_cleaner'
+end
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -25,7 +29,6 @@ gem 'jquery-rails'
 group :test do
   gem 'rspec-rails'
   gem 'cucumber-rails', :require => false
-  gem 'database_cleaner'
   gem 'vcr'
   gem 'webmock'
 end

@@ -1,6 +1,6 @@
 Feature: Users can manage REST services
   In order to manage REST services
-  As a application admin
+  As an application admin
   I want to be able to list, create, change and delete REST services
 
   Scenario: User creates new service
