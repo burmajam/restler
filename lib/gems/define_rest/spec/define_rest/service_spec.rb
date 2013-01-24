@@ -9,17 +9,24 @@ describe DefineRest::Service do
   it { should respond_to :http_method }
 
   describe ".search_by_name(name)" do
+    def existing_service_with_name(name)
+      FactoryGirl.create :service, name: name
+    end
+    def search_results_for(term)
+      DefineRest::Service.search_by_name term
+    end
+
     it "is case insensitive" do
-      s = FactoryGirl.create :service, name: 'Create new customer'
-      DefineRest::Service.search_by_name('create NEW customer').should include(s)
+      existing_service = existing_service_with_name 'Create new customer'
+      search_results_for('create NEW Customer').should include(existing_service)
     end
     it "finds existing service that contain phrase in name" do
-      s = FactoryGirl.create :service, name: 'Create new customer'
-      DefineRest::Service.search_by_name('new cus').should include(s)
+      existing_service = existing_service_with_name 'Create new customer'
+      search_results_for('new cus').should include(existing_service)
     end
     it "doesn't return service that doesn't contain phrase in name" do
-      s = FactoryGirl.create :service, name: 'Create new customer'
-      DefineRest::Service.search_by_name('non existing').should_not include(s)
+      existing_service = existing_service_with_name 'Create new customer'
+      search_results_for('non existing').should_not include(existing_service)
     end
   end
 
