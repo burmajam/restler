@@ -22,4 +22,6 @@ describe DefineRest::Service do
       DefineRest::Service.search_by_name('non existing').should_not include(s)
     end
   end
+
+  it { should validate_uniqueness_of(:name) }
 end
