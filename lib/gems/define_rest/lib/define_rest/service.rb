@@ -3,6 +3,7 @@ module DefineRest
     self.table_name = 'define_rest_service'
 
     has_many :parameters
+    has_many :headers
 
     validates_uniqueness_of :name
 
