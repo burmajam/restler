@@ -14,6 +14,7 @@ gem 'define_rest', path: 'lib/gems/define_rest'
 group :test do # needed for define_rest
   gem 'factory_girl', '~>4.0.0'
   gem 'database_cleaner'
+  gem "shoulda-matchers"
 end
 
 group :assets do

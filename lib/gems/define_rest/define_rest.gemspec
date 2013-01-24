@@ -20,4 +20,5 @@ Gem::Specification.new do |gem|
   gem.add_dependency "activerecord", "~>3.2.11"
   gem.add_development_dependency "factory_girl", "~>4.0"
   gem.add_development_dependency "database_cleaner"
+  gem.add_development_dependency "shoulda-matchers"
 end
