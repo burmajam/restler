@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130124011119) do
+ActiveRecord::Schema.define(:version => 20130124194226) do
+
+  create_table "define_rest_parameters", :force => true do |t|
+    t.string   "name",                             :null => false
+    t.text     "description"
+    t.string   "presence",                         :null => false
+    t.string   "example"
+    t.boolean  "quoted_in_json", :default => true
+    t.integer  "service_id"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
 
   create_table "define_rest_service", :force => true do |t|
     t.string "name"

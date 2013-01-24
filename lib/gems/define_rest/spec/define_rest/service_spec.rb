@@ -1,5 +1,6 @@
 require_relative '../activerecord_helper'
 require_relative '../../../define_rest/lib/define_rest/service'
+require_relative '../../../define_rest/lib/define_rest/parameter'
 require_relative '../factories_helper'
 
 describe DefineRest::Service do
@@ -7,6 +8,8 @@ describe DefineRest::Service do
   it { should respond_to :description }
   it { should respond_to :url }
   it { should respond_to :http_method }
+
+  it { should have_many :parameters }
 
   describe ".search_by_name(name)" do
     def existing_service_with_name(name)
