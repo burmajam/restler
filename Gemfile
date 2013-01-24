@@ -2,8 +2,15 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 
-gem 'activerecord-jdbcsqlite3-adapter'
-gem 'jruby-openssl'
+platform :mri do # MRI
+  gem 'sqlite3'
+end
+platform :jruby do
+  gem 'activerecord-jdbcsqlite3-adapter'
+  gem 'jruby-openssl'
+end
+
+gem 'define_rest', path: 'lib/gems/define_rest'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
