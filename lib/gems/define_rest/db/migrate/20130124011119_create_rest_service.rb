@@ -1,14 +1,13 @@
 class CreateRestService < ActiveRecord::Migration
-  def up
+  def change
     create_table :define_rest_service do |t|
-      t.string :name
+      t.string :name, null: false
       t.text :description
-      t.string :url
-      t.string :http_method
-    end
-  end
+      t.string :url, null: false
+      t.string :http_method, null: false, default: 'GET'
+      t.string :encryption, null: false, default: 'no'
 
-  def down
-    drop_table :define_rest_service
+      t.timestamps
+    end
   end
 end

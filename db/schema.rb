@@ -14,8 +14,8 @@
 ActiveRecord::Schema.define(:version => 20130124201455) do
 
   create_table "define_rest_headers", :force => true do |t|
-    t.string   "key"
-    t.string   "value"
+    t.string   "key",        :null => false
+    t.string   "value",      :null => false
     t.integer  "service_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -33,10 +33,13 @@ ActiveRecord::Schema.define(:version => 20130124201455) do
   end
 
   create_table "define_rest_service", :force => true do |t|
-    t.string "name"
-    t.text   "description"
-    t.string "url"
-    t.string "http_method"
+    t.string   "name",                           :null => false
+    t.text     "description"
+    t.string   "url",                            :null => false
+    t.string   "http_method", :default => "GET", :null => false
+    t.string   "encryption",  :default => "no",  :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
 end
