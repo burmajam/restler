@@ -7,4 +7,6 @@ describe DefineRest::Parameter do
   it { should respond_to :presence }
   it { should respond_to :example }
   it { should respond_to :quoted_in_json? }
+
+  it { should ensure_inclusion_of(:presence).in_array(['optional', 'mandatory']) }
 end
